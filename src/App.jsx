@@ -1,12 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 //import DndDraggableExample from "./DndDraggableExample";
-import DndDraggableExample from "https://raw.githubusercontent.com/rahulm2210/cms1/refs/heads/main/DndDraggableExample.jsx";
-
+//import DndDraggableExample from "https://testapp-ncgp.vercel.app/DndDraggableExample.jsx";
+const DndDraggableExample = React.lazy(() =>
+  import("https://testapp-ncgp.vercel.app/DndDraggableExample.jsx")
+);
 function App() {
   return (
     <>
-      <DndDraggableExample />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <DndDraggableExample />
+      </React.Suspense>
     </>
   );
 }
