@@ -5,7 +5,7 @@ export const config = {
 }
 
 export default function middleware(request) {
-  const response = new Response(/* file content */, {
+  const response = new Response({
     headers: {
       'Content-Type': 'application/javascript',
       'Access-Control-Allow-Origin': '*',
@@ -13,3 +13,4 @@ export default function middleware(request) {
   });
   return response;
 }
+
