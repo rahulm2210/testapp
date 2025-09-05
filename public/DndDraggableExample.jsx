@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  DragDropContext,
-  Droppable,
-  Draggable,
-} from "@hello-pangea/dnd";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 const initialItems = [
   { id: "1", content: "Block One" },
@@ -35,11 +31,7 @@ const DndDraggableExample = () => {
               style={{ width: 250, minHeight: 200 }}
             >
               {items.map((item, index) => (
-                <Draggable
-                  key={item.id}
-                  draggableId={item.id}
-                  index={index}
-                >
+                <Draggable key={item.id} draggableId={item.id} index={index}>
                   {(provided, snapshot) => (
                     <div
                       ref={provided.innerRef}
